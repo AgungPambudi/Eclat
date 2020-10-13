@@ -20,3 +20,12 @@ rules = apriori(transactions, min_support = 0.003, min_confidence = 0.2, min_lif
 results = list(rules)
 print(results)
 
+# Put the results into a well-organized Pandas DataFrame
+def inspect(results):
+    lhs = [tuple(result[2][0][0])[0] for result in results]
+    rhs = [tuple(result[2][0][1])[0] for result in results]
+    supports = [result[1] for result in results]
+    return list(zip(lhs, rhs, supports))
+resultsinDataFrame = pd.DataFrame(inspect(results), columns = ['Left-hand Side', 'Right-hand Side', 'Support'])
+print(resultsinDataFrame)
+
