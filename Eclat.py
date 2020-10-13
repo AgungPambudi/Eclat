@@ -26,6 +26,6 @@ def inspect(results):
     rhs = [tuple(result[2][0][1])[0] for result in results]
     supports = [result[1] for result in results]
     return list(zip(lhs, rhs, supports))
-resultsinDataFrame = pd.DataFrame(inspect(results), columns = ['Left-hand Side', 'Right-hand Side', 'Support'])
+resultsinDataFrame = pd.DataFrame(inspect(results), columns = ['Product 1', 'Product 2', 'Support'])
 print(resultsinDataFrame)
 
