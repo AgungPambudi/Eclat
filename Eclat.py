@@ -29,3 +29,6 @@ def inspect(results):
 resultsinDataFrame = pd.DataFrame(inspect(results), columns = ['Product 1', 'Product 2', 'Support'])
 print(resultsinDataFrame)
 
+# Display the results sorted by descending lifts
+resultsinDataFrame.nlargest(n = 10, columns = 'Support')
+
